@@ -32,7 +32,7 @@ console.log('pizzaList >>> ', pizzasList);
   return (
     <div className="App">
       <div className="wrap">
-          <span className='heading'>Our Pizzaria</span>
+          <span className='heading'>Pizza Shop</span>
           <AddPizzaForm
             addPizza={addPizza}
           />
