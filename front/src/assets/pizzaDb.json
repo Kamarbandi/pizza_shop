@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF02823DBA2CB09EE4F90CBC5E227A.jpg",
+    "title": "Dodo Pizza",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 15,
+    "category": 1,
+    "rating": 2
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF0286069492BA911C4D3B3376436C.jpg",
+    "title": "Mexican",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 26,
+    "category": 1,
+    "rating": 3
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF0286349B277780CB97A8544A6AEC.jpg",
+    "title": "Pizza Cheeseburger",
+    "types": [0, 1],
+    "sizes": [26, 40],
+    "price": 33,
+    "category": 1,
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF028659F4831082FB3FF274D0B999.jpg",
+    "title": "Grill Veggie",
+    "types": [0, 1],
+    "sizes": [30, 40],
+    "price": 17,
+    "category": 1,
+    "rating": 6
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF0C83F6699307BDCD7F4E443D87F8.jpg",
+    "title": "Halb & Halb Pizza",
+    "types": [0, 1],
+    "sizes": [30, 40],
+    "price": 13,
+    "category": 2,
+    "rating": 4
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF0286ED2F2E68B144144A261D5037.jpg",
+    "title": "L.O.V.E. Pizza",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 29,
+    "category": 2,
+    "rating": 5
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF0287297E8D2FAA3C75AC74F8D486.jpg",
+    "title": "Kinder Pizza",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 10,
+    "category": 2,
+    "rating": 6
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF0283DFE3970BA555B0D85E5C8302.jpg",
+    "title": "Deine Pizza",
+    "types": [0, 1],
+    "sizes": [30, 40],
+    "price": 13,
+    "category": 3,
+    "rating": 11
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D5D9D0E5599A408FCE95255CBC0.jpg",
+    "title": "Salami",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 29,
+    "category": 3,
+    "rating": 23
+  },
+  {
+    "id": 10,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF0286B65F8F12A823048748DDE33D.jpg",
+    "title": "München",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 45,
+    "category": 4,
+    "rating": 6
+  },
+  {
+    "id": 11,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D5DA07719C9B2AE7FDF4E95727B.jpg",
+    "title": "4 Cheeses",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 45,
+    "category": 4,
+    "rating": 6
+  },
+  {
+    "id": 12,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF0285D9A4B265A7A78E39D98840B3.jpg",
+    "title": "Fiesta",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 45,
+    "category": 5,
+    "rating": 7
+  },
+  {
+    "id": 13,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF02846D3C184A867D674626FF4837.jpg",
+    "title": "Carbonara",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 33,
+    "category": 6,
+    "rating": 7
+  },
+  {
+    "id": 14,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF028428DF5AAD9D50171778670692.jpg",
+    "title": "Pepperoni Fresh",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 44,
+    "category": 6,
+    "rating": 8
+  },
+  {
+    "id": 15,
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EF028428DF5AAD9D50171778670692.jpg",
+    "title": "Keçi əmcəyi",
+    "types": [0, 1],
+    "sizes": [26, 30, 40],
+    "price": 34,
+    "category": 7,
+    "rating": 8
+  }
+]
