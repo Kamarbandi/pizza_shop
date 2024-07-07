@@ -33,7 +33,6 @@ public class User {
         this.posts = posts;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }

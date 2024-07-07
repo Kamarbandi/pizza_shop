@@ -1,11 +1,12 @@
 package com.pizza.pizza.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-@Table(name = "types")
+@Table(name = "pizza_types")
 public class PizzaTypeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,8 +14,9 @@ public class PizzaTypeEntity {
 
     private int type;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pizza_id")
+    @JsonIgnore
     private PizzaEntity pizza;
 
     public PizzaTypeEntity() {

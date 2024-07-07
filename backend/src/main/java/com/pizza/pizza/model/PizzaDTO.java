@@ -1,37 +1,16 @@
-package com.pizza.pizza.entity;
-
-import jakarta.persistence.*;
+package com.pizza.pizza.model;
 
 import java.util.List;
 
-@Entity
-@Table(name = "pizzas")
-public class PizzaEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PizzaDTO {
     private Long id;
-    private String image_url;
+    private String imageUrl;
     private String title;
     private int price;
     private int category;
     private int rating;
-
-    @OneToMany(mappedBy = "pizza", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<PizzaTypeEntity> types;
-
-    @OneToMany(mappedBy = "pizza", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<PizzaSizeEntity> sizes;
-
-    public PizzaEntity() {
-    }
-
-    public String getImage_url() {
-        return image_url;
-    }
-
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
-    }
+    private List<Integer> types;
+    private List<Integer> sizes;
 
     public Long getId() {
         return id;
@@ -41,6 +20,13 @@ public class PizzaEntity {
         this.id = id;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public String getTitle() {
         return title;
@@ -74,19 +60,19 @@ public class PizzaEntity {
         this.rating = rating;
     }
 
-    public List<PizzaTypeEntity> getTypes() {
+    public List<Integer> getTypes() {
         return types;
     }
 
-    public void setTypes(List<PizzaTypeEntity> types) {
+    public void setTypes(List<Integer> types) {
         this.types = types;
     }
 
-    public List<PizzaSizeEntity> getSizes() {
+    public List<Integer> getSizes() {
         return sizes;
     }
 
-    public void setSizes(List<PizzaSizeEntity> sizes) {
+    public void setSizes(List<Integer> sizes) {
         this.sizes = sizes;
     }
 }
