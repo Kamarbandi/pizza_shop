@@ -1,11 +1,11 @@
 
 # Pizza shop
 
-Frontend in ReactJs
-Backend Java Spring Boot
-DB PostgreSql (for that i prepared docker, it is in backend docker-compose.yml)
+Frontend in ReactJs.
+Backend Java Spring Boot.
+DB PostgreSql (for that i prepared docker, it is in backend docker-compose.yml).
 
-First run the docker
+First run the docker.
 After you need create a db with a name pizza and after create coresponding tables, for that i prepared for you sql file, it is backedn folder data.sql file.
 
 In the project directory font, you have to "npm start" to run frontent:
