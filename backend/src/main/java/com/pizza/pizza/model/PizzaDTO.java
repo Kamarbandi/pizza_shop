@@ -1,13 +1,25 @@
 package com.pizza.pizza.model;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+
 import java.util.List;
 
 public class PizzaDTO {
+    @NotNull
     private Long id;
     private String imageUrl;
     private String title;
+
+    @NotNull
+    @Min(1)
     private int price;
     private int category;
+
+    @NotNull
+    @Min(1)
+    @Max(5)
     private int rating;
     private List<Integer> types;
     private List<Integer> sizes;

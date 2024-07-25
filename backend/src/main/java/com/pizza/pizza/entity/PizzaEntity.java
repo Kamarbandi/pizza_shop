@@ -22,7 +22,15 @@ public class PizzaEntity {
     @OneToMany(mappedBy = "pizza", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PizzaSizeEntity> sizes;
 
+    public PizzaEntity(Long id, String image_url, String title, int price) {
+        this.id = id;
+        this.image_url = image_url;
+        this.title = title;
+        this.price = price;
+    }
+
     public PizzaEntity() {
+
     }
 
     public String getImage_url() {

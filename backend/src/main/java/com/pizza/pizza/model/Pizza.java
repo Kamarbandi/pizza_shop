@@ -15,19 +15,7 @@ public class Pizza {
 
     private List<PizzaT> pizzaT;
 
-    public static Pizza toModel(PizzaEntity entity) {
-        Pizza model = new Pizza();
-        model.setId(entity.getId());
-        model.setImage_url(entity.getImage_url());
-        model.setTitle(entity.getTitle());
-        model.setPrice(entity.getPrice());
-        model.setCategory(entity.getCategory());
-        model.setRating(entity.getRating());
-        model.setPizzaT(
-                entity.getTypes().stream().map(PizzaT::toModel).collect(Collectors.toList())
-        );
-        return model;
-    }
+
 
     public Pizza() {
     }
