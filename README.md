@@ -1,24 +1,28 @@
+### Project Setup
 
-# Pizza shop
+#### Tech Stack
+- **Frontend:** ReactJS
+- **Backend:** Java Spring Boot
+- **Database:** PostgreSQL
+- **Container:** Docker
 
-Frontend in ReactJs.
-Backend Java Spring Boot.
-DB PostgreSql (for that i prepared docker, it is in backend docker-compose.yml).
+#### Initial Setup
 
-First run the docker.
-After you need create a db with a name pizza and after create coresponding tables, for that i prepared for you sql file, it is backedn folder data.sql file.
+1. **Run Docker:**
+   - The database is set up using Docker. The configuration can be found in the backend's `docker-compose.yml` file.
+  
+2. **Create the Database:**
+   - After running Docker, create a database named `pizza`.
+   - Set up the corresponding tables using the `data.sql` file located in the backend folder.
 
-In the project directory font, you have to "npm start" to run frontent:
+3. **Run the Frontend:**
+   - In the `front` project directory, run `npm start` to launch the frontend.
+   - This will start the app in development mode.
+   - Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
 
+4. **Run the Backend:**
+   - Navigate to the `backend` folder and run the Spring Boot application.
+   - The backend will be running at [http://localhost:8083/](http://localhost:8083/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-
-To run backend go in the folder backend and run Application
-Sping Boot is running in http://localhost:8083/
-
-
-
-Keep in mind i added in env BROWSER=none, so after npm start you should open manually in browser http://localhost:3000
-
+#### Additional Notes
+- I have added `BROWSER=none` in the environment, so after running `npm start`, you'll need to manually open [http://localhost:3000](http://localhost:3000) in your browser.
