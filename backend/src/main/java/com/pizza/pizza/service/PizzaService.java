@@ -4,6 +4,7 @@ import com.pizza.pizza.entity.PizzaEntity;
 import com.pizza.pizza.exception.PizzaNotFoundException;
 import com.pizza.pizza.exception.UserNotFoundException;
 import com.pizza.pizza.model.PizzaDTO;
+import com.pizza.pizza.model.PizzaResponseDTO;
 import com.pizza.pizza.repo.PizzaRepo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,7 +23,7 @@ public class PizzaService {
         this.pizzaRepo = pizzaRepo;
     }
 
-    public List<PizzaDTO> getAllPizzas(int page, int limit, String sortBy, String order, String search, Integer category) {
+    public PizzaResponseDTO getAllPizzas(int page, int limit, String sortBy, String order, String search, Integer category) {
         Pageable pageable = PageRequest.of(
                 page - 1,
                 limit,
@@ -30,6 +31,7 @@ public class PizzaService {
         );
 
         Page<PizzaEntity> pizzaPage;
+
         if ((search != null && !search.isEmpty()) && category != null) {
             pizzaPage = pizzaRepo.findByTitleContainingIgnoreCaseAndCategory(search, category, pageable);
         } else if (search != null && !search.isEmpty()) {
@@ -40,7 +42,10 @@ public class PizzaService {
             pizzaPage = pizzaRepo.findAll(pageable);
         }
 
-        return pizzaPage.stream().map(this::convertToDTO).collect(Collectors.toList());
+        List<PizzaDTO> pizzas = pizzaPage.stream().map(this::convertToDTO).collect(Collectors.toList());
+        int totalPages = pizzaPage.getTotalPages();
+
+        return new PizzaResponseDTO(pizzas, totalPages);
     }
 
     private PizzaDTO convertToDTO(PizzaEntity pizzaEntity) {

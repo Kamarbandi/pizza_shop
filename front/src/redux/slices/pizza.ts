@@ -31,12 +31,14 @@ export enum Status {
 
 interface PizzaSliceState {
     items: PizzaItem[];
-    status: Status
+    status: Status;
+    totalPages: number;
 }
 
 const initialState: PizzaSliceState = {
     items: [],
     status: Status.LOADING, // loading | success | error
+    totalPages: 1
 }
 
 export type SearchPizzaParams = {
@@ -47,15 +49,18 @@ export type SearchPizzaParams = {
     currentPage: string;
 }
 
-export const getPizzas = createAsyncThunk<PizzaItem[], SearchPizzaParams>(
+export const getPizzas = createAsyncThunk<{items: PizzaItem[], totalPages: number}, SearchPizzaParams>(
     'pizza/getPizzasStatus',
     async (params) => {
         const { sortBy, order, category, search, currentPage} = params;
 
-        const { data } = await axios.get<PizzaItem[]>(
+        const { data } = await axios.get<{pizzas: PizzaItem[], totalPages: number}>(
             `http://localhost:8083/data/pizzas?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`
         );
-        return data;
+
+        console.log(data.totalPages);
+
+        return {items: data.pizzas, totalPages: data.totalPages};
     },
 );
 
@@ -74,10 +79,11 @@ export const pizza = createSlice({
                 state.items = [];
             })
             .addCase(getPizzas.fulfilled, (state, action) => {
-                state.items = action.payload;
+                state.items = action.payload.items;
+                state.totalPages = action.payload.totalPages;
                 state.status = Status.SUCCESS;
             })
-            .addCase(getPizzas.rejected, (state, action) => {
+            .addCase(getPizzas.rejected, (state) => {
                 state.status = Status.ERROR;
                 state.items = [];
             });

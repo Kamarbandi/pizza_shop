@@ -15,8 +15,6 @@ public class Pizza {
 
     private List<PizzaT> pizzaT;
 
-
-
     public Pizza() {
     }
 

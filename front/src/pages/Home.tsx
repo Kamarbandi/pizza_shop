@@ -21,8 +21,10 @@ const Home: React.FC = () => {
     const userNavigate = useNavigate();
     const dispatch = useAppDispatch();
 
-    const { items, status } = useSelector(selectPizzaData);
+    const { items, status, totalPages } = useSelector(selectPizzaData);
     const {categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
+
+    console.log(totalPages);
 
     const isSearch = React.useRef(false);
     const isMounted = React.useRef(false);
@@ -131,7 +133,7 @@ const Home: React.FC = () => {
                     )
                 }
 
-                <Pagination currentPage={currentPage} onChangePage={onChangePage}/>
+                <Pagination pageCount={totalPages} currentPage={currentPage} onChangePage={onChangePage}/>
             </div>
     );
 }

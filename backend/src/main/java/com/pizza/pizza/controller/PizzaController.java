@@ -1,6 +1,7 @@
 package com.pizza.pizza.controller;
 
 import com.pizza.pizza.exception.PizzaNotFoundException;
+import com.pizza.pizza.model.PizzaResponseDTO;
 import com.pizza.pizza.service.PizzaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ public class PizzaController {
     private final PizzaService pizzaService;
 
     @GetMapping("/pizzas")
-    public ResponseEntity getAllPizzas(
+    public ResponseEntity<PizzaResponseDTO> getAllPizzas(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "4") int limit,
             @RequestParam(defaultValue = "rating") String sortBy,
@@ -21,7 +22,9 @@ public class PizzaController {
             @RequestParam(required = false) String search,
             @RequestParam(required = false) Integer category
     ) {
-        return ResponseEntity.ok(pizzaService.getAllPizzas(page, limit, sortBy, order, search, category));
+        PizzaResponseDTO responce = pizzaService.getAllPizzas(page, limit, sortBy, order, search, category);
+        return ResponseEntity.ok(responce);
+
     }
 
     @GetMapping("/pizza/{id}")
