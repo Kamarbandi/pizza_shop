@@ -15,7 +15,7 @@ const FullPizza = () => {
     React.useEffect(() => {
         async function fetchPizza() {
             try {
-                const { data } = await axios.get("https://663231d1c51e14d69563a7b4.mockapi.io/items/" + id);
+                const { data } = await axios.get("http://localhost:8083/data/pizza/" + id);
                 setPizza(data);
             } catch (error) {
                 alert("Something is happen during get Pizza");

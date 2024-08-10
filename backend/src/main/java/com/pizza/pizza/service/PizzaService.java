@@ -62,8 +62,11 @@ public class PizzaService {
     }
 
 
-    public PizzaEntity getPizzaById(Long id) throws PizzaNotFoundException {
-        return pizzaRepo.findById(id).orElseThrow(() -> new PizzaNotFoundException("Pizza not found with id: " + id));
+    public PizzaDTO getPizzaById(Long id) throws PizzaNotFoundException {
+        PizzaEntity pizzaEntity = pizzaRepo.findById(id)
+                .orElseThrow(() -> new PizzaNotFoundException("Pizza not found with id: " + id));
+
+        return convertToDTO(pizzaEntity);
     }
 
     public int getSumOfAllPizzas() {
