@@ -3,7 +3,7 @@ package com.pizza.pizza.controller;
 import com.pizza.pizza.entity.UserEntity;
 import com.pizza.pizza.exception.UserAlreadyExistException;
 import com.pizza.pizza.exception.UserNotFoundException;
-import com.pizza.pizza.service.UserService;
+import com.pizza.pizza.service.UserServiceOld;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UserController {
 
-    private UserService userService;
+    private UserServiceOld userService;
 
-    public UserController(UserService userService) {
+    public UserController(UserServiceOld userService) {
         this.userService = userService;
     }
 

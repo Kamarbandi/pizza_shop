@@ -1,8 +1,11 @@
 package com.pizza.pizza.repo;
 
 import com.pizza.pizza.entity.UserEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends CrudRepository<UserEntity, Long> {
-    UserEntity findByUsername(String username);
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+
+    Optional<UserEntity> findByLogin(String login);
 }

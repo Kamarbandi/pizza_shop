@@ -27,7 +27,9 @@ const FullPizza = () => {
     }, []);
 
     if (!pizza) {
-        return "Download ...";
+        return (<div>
+            "Download ..."
+        </div>);
     }
 
     return (

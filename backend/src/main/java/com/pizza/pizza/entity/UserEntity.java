@@ -1,53 +1,37 @@
 package com.pizza.pizza.entity;
 
 import jakarta.persistence.*;
-import java.util.List;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 @Entity
-@Table(name = "users")
+@Table(name = "app_user")
 public class UserEntity {
+
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    @Column(name = "first_name", nullable = false)
+    @Size(max = 100)
+    private String firstName;
+
+    @Column(name = "last_name", nullable = false)
+    @Size(max = 100)
+    private String lastName;
+
+    @Column(nullable = false)
+    @Size(max = 100)
+    private String login;
+
+    @Column(nullable = false)
+    @Size(max = 100)
     private String password;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<PostEntity> posts;
-
-    public UserEntity() {
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public List<PostEntity> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(List<PostEntity> posts) {
-        this.posts = posts;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
