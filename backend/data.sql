@@ -1,6 +1,6 @@
 -- Create the pizzas table
 CREATE TABLE pizzas (
-                        id INT PRIMARY KEY,
+                        id SERIAL PRIMARY KEY,
                         image_url VARCHAR(255) NOT NULL,
                         title VARCHAR(255) NOT NULL,
                         price DECIMAL(10, 2) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE pizzas (
 
 -- Create the sizes table
 CREATE TABLE sizes (
-                       id INT PRIMARY KEY AUTO_INCREMENT,
+                       id SERIAL PRIMARY KEY,
                        size INT NOT NULL,
                        pizza_id INT,
                        FOREIGN KEY (pizza_id) REFERENCES pizzas(id)
@@ -18,7 +18,7 @@ CREATE TABLE sizes (
 
 -- Create the pizza_types table
 CREATE TABLE pizza_types (
-                             id INT PRIMARY KEY AUTO_INCREMENT,
+                             id SERIAL PRIMARY KEY,
                              type INT NOT NULL,
                              pizza_id INT,
                              FOREIGN KEY (pizza_id) REFERENCES pizzas(id)
@@ -78,3 +78,17 @@ INSERT INTO pizza_types (id, type, pizza_id) VALUES
                                                  (25, 0, 13), (26, 1, 13),
                                                  (27, 0, 14), (28, 1, 14),
                                                  (29, 0, 15), (30, 1, 15);
+
+CREATE TABLE flyway_schema_history (
+                                       installed_rank INT NOT NULL,
+                                       version VARCHAR(50),
+                                       description VARCHAR(200) NOT NULL,
+                                       type VARCHAR(20) NOT NULL,
+                                       script VARCHAR(1000) NOT NULL,
+                                       checksum INTEGER,
+                                       installed_by VARCHAR(100) NOT NULL,
+                                       installed_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                                       execution_time INT NOT NULL,
+                                       success BOOLEAN NOT NULL
+);
+

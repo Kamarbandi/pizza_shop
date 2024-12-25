@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
 import org.springframework.data.domain.Sort;
 
 @Service
@@ -23,7 +24,14 @@ public class PizzaService {
         this.pizzaRepo = pizzaRepo;
     }
 
-    public PizzaResponseDTO getAllPizzas(int page, int limit, String sortBy, String order, String search, Integer category) {
+    public PizzaResponseDTO getAllPizzas(
+            int page,
+            int limit,
+            String sortBy,
+            String order,
+            String search,
+            Integer category
+    ) {
         Pageable pageable = PageRequest.of(
                 page - 1,
                 limit,
